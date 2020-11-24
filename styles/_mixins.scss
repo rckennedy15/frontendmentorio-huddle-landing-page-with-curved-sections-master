@@ -1,0 +1,73 @@
+@import 'colors';
+
+// usage: @include mixins.center; | @include mixins.center(x); | @include mixins.center(y);
+@mixin center($axis: 'both') {
+  position: absolute;
+
+  @if $axis == 'y' {
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @if $axis == 'x' {
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @if $axis == 'both' {
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// responsive breakpoint for tablet, desktop, and up
+@mixin desktop-bp {
+  @media (min-width: 800px) {
+    @content;
+  }
+}
+
+@mixin transition-ease {
+  transition: background .3s ease-in-out, border .3s ease-in-out, color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+// responsive flexbox w/ two rows on mobile, two columns on desktop
+
+@mixin two-flex ($reverse: false) {
+  display: flex;
+  @if $reverse {
+    flex-direction: column-reverse;
+  } @else {
+    flex-direction: column;
+  }
+  @media (min-width: 800px) {
+    flex-direction: row;
+  }
+}
+// Middle three sections
+@mixin three-sections {
+  background: $pale-blue;
+  padding: 40% 5% 25%;
+
+  h2 {
+    margin-top: 20%;
+  }
+
+  img {
+    height: auto;
+    width: 75%;
+  }
+}

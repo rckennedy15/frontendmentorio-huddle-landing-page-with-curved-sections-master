@@ -46,21 +46,31 @@
 
 // responsive flexbox w/ two rows on mobile, two columns on desktop
 
-@mixin two-flex ($reverse: false) {
+@mixin two-flex ($mobile-reverse: false, $desktop-reverse: false) {
   display: flex;
-  @if $reverse {
+  @if $mobile-reverse {
     flex-direction: column-reverse;
   } @else {
     flex-direction: column;
   }
   @media (min-width: 800px) {
-    flex-direction: row;
+    @if $desktop-reverse {
+      flex-direction: row-reverse;
+    } @else {
+      flex-direction: row;
+    }
   }
 }
 // Middle three sections
-@mixin three-sections {
+@mixin three-sections ($desktop: false) {
+  @if $desktop {
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  } @else {
+    padding: 40% 5% 25%;
+  }
   background: $pale-blue;
-  padding: 40% 5% 25%;
 
   h2 {
     margin-top: 20%;

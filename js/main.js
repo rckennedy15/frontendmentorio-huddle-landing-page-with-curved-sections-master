@@ -1,8 +1,6 @@
 // starts initial animations on page load
 $(document)
   .ready(function() {
-    makeHidden(".section1__body .button");
-
     $(".section1__head")
       .addClass("anim-fade-in");
     setTimeout(() => {
@@ -12,26 +10,10 @@ $(document)
     $(".section1__body")
       .addClass("anim-left");
 
-    makeHidden(".screen-mockups");
     setTimeout(() => {
       $(".screen-mockups")
         .addClass("anim-fade-in");
     }, 2300);
-
-    makeHidden(".brag__item1");
-    makeHidden(".brag__item2");
-
-    makeHidden(".grow-together__img");
-    makeHidden(".grow-together__text");
-
-    makeHidden(".flowing-conversations__img");
-    makeHidden(".flowing-conversations__text");
-
-    makeHidden(".your-users__img");
-    makeHidden(".your-users__text");
-
-    makeHidden(".cta__content");
-    makeHidden(".cta__content .button");
   });
 
 // every time you scroll, checks if elements are in viewport

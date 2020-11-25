@@ -2,6 +2,7 @@
 @import 'colors';
 
 body {
+  font-family: 'Open Sans', sans-serif;
   margin: 0;
   overflow-x: hidden;
   text-align: center;
@@ -53,7 +54,7 @@ p {
   border-radius: 10rem;
   box-shadow: 0 0 15px 0 rgba($dark-cyan, .2);
   color: $white;
-  font-weight: 600;
+  font-weight: 700;
   padding: 1.4rem 15% 1.2rem;
   text-decoration: none;
 
@@ -75,6 +76,56 @@ p {
     box-shadow: 0 0 15px 0 rgba($light-pink, .2);
     color: $light-pink;
   }
+}
+
+.anim-left {
+  animation: slide-in-from-left 1.3s ease forwards;
+}
+
+@keyframes slide-in-from-left {
+  0% {
+    opacity: 100%;
+    transform: translateX(-100vw);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+.anim-right {
+  animation: slide-in-from-right 1.3s ease forwards;
+}
+
+@keyframes slide-in-from-right {
+  0% {
+    opacity: 100%;
+    transform: translateX(100vw);
+  }
+
+  100% {
+    opacity: 100%;
+    transform: translateX(0);
+  }
+}
+
+.anim-fade-in {
+  animation: fade-in 1.3s ease forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}
+
+.is-hidden {
+  opacity: 0;
 }
 
 // Top section
@@ -116,8 +167,6 @@ p {
       font-size: 1.3rem;
       padding-bottom: 4rem;
     }
-
-    .button {}
   }
 }
 
@@ -154,7 +203,7 @@ p {
 
     strong {
       @include desktop-bp {
-        font-size: 7vw;
+        font-size: 6rem;
       }
       color: $dark-cyan;
       display: block;
@@ -329,7 +378,7 @@ p {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 14vw;
+    height: 13vw;
     width: 100%;
   }
 
